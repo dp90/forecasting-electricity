@@ -8,6 +8,8 @@ license = "MIT"
 [tool.poetry.dependencies]
 python = "^3.12"
 pandas = "^2.2.2"
+ipykernel = "^6.29.4"
+torch = "^2.2.2"
 
 [tool.poetry.dev-dependencies]
 pytest = "^6.0"
