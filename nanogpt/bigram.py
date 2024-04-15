@@ -1,3 +1,4 @@
+import os
 import torch
 import torch.nn as nn
 from torch.nn import functional as F
@@ -8,11 +9,15 @@ MAX_ITERS = 3000
 EVAL_INTERVAL = 300
 LEARNING_RATE = 1e-2
 device = 'cuda' if torch.cuda.is_available() else 'cpu'
+print(f'device used is: {device}')
 EVAL_ITERS = 200
 
-
 torch.manual_seed(2512)
-DATA_PATH = 'C:\\src\\forecasting-electricity\\data\\input.txt'
+
+DATA_DIR = os.path.join(os.path.dirname(__file__), '..', 'data')
+FILENAME = 'input.txt'
+DATA_PATH = os.path.join(DATA_DIR, FILENAME)
+# DATA_PATH = 'C:\\src\\forecasting-electricity\\data\\input.txt'
 with open(DATA_PATH, 'r', encoding='utf-8') as f:
     text = f.read()
 
